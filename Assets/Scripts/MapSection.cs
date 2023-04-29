@@ -22,12 +22,10 @@ public class MapSection : MonoBehaviour
     {
         if (collision != null && collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("triggered");
             if (spawnNextSectionEvent != null)
             {
                 spawnNextSectionEvent(null);
                 spawnNextSectionEvent = null;
-                Debug.Log("spawner");
             }
         }
     }
