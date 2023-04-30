@@ -42,7 +42,7 @@ public class MapController : MonoBehaviour
         mapSection.spawnNextSectionEvent += SpawnNextRandomSection;
         activeSections.Add(mapSection);
 
-        if (activeSections.Count > 5)
+        if (activeSections.Count > 4)
             DestroyOlderSection();
     }
 
