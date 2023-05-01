@@ -18,6 +18,8 @@ public class MapController : MonoBehaviour
 
         SpawnNextRandomSection(firstSpawnPosition);
         SpawnNextRandomSection();
+        SpawnNextRandomSection();
+        SpawnNextRandomSection();
 
     }
 
@@ -35,14 +37,13 @@ public class MapController : MonoBehaviour
 
 
         Vector3 spawnPos = spawnPoint ?? (activeSections[activeSections.Count - 1].NextSectionSpawnPosition.position);
-        spawnPos.y += selectedSection.transform.localScale.y / 2;
         GameObject spawned = Instantiate(selectedSection, spawnPos, Quaternion.identity);
 
         MapSection mapSection = spawned.GetComponent<MapSection>();
         mapSection.spawnNextSectionEvent += SpawnNextRandomSection;
         activeSections.Add(mapSection);
 
-        if (activeSections.Count > 4)
+        if (activeSections.Count > 5)
             DestroyOlderSection();
     }
 
